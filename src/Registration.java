@@ -31,12 +31,26 @@ public class Registration
 
         if (Check_Email == true)
         {
-            System.out.println(Email+"Email Id is Valid");
+            System.out.println(Email+"   Email Id is Valid");
         }
         else
         {
-            System.out.println(Email+"Email Is Not Valid");
+            System.out.println(Email+"   Email Is Not Valid");
         }
+
+        System.out.println("Enter your Phone Number :");
+        String Phone_Number = d.readLine();
+        boolean Check_Phone_Number = Phone_Number.matches("^(91)\\s{1}[7-9]{1}[0-9]{9}$");
+
+        if (Check_Phone_Number == true)
+        {
+            System.out.println(Phone_Number+"  Phone_Number Id is Valid");
+        }
+        else
+        {
+            System.out.println(Phone_Number+"  Phone_Number Is Not Valid");
+        }
+
     }
 }
 
