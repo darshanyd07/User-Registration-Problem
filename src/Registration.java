@@ -51,6 +51,18 @@ public class Registration
             System.out.println(Phone_Number+"  Phone_Number Is Not Valid");
         }
 
+        System.out.println("Enter your PassWord :");
+        String Password = d.readLine();
+        boolean Check_Password = Password.matches("[a-z A-Z 0-9]{8,}$");
+
+        if (Check_Password == true)
+        {
+            System.out.println(Password+"  Password Format is Valid");
+        }
+        else
+        {
+            System.out.println(Password+" Password Format Is Not Valid");
+        }
     }
 }
 
