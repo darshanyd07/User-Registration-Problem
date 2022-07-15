@@ -53,7 +53,7 @@ public class Registration
 
         System.out.println("Enter your PassWord :");
         String Password = d.readLine();
-        boolean Check_Password = Password.matches("[a-z A-Z 0-9]{8,}$");
+        boolean Check_Password = Password.matches("^[A-Z]{1}[a-z A-Z 0-9]{7,}$");
 
         if (Check_Password == true)
         {
