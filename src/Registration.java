@@ -63,6 +63,19 @@ public class Registration
         {
             System.out.println(Password+" Password Format Is Not Valid");
         }
+
+        System.out.println("Enter your Email Id :");
+        String Email_Id = d.readLine();
+        boolean Check_Email_Id = Password.matches("^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.com){1,}(.au)*$|^(abc)[0-9+-]*(@)[0-9a-z]{1,}(.net){1}$");
+
+        if (Check_Email_Id == true)
+        {
+            System.out.println(Email_Id+"  Password Format is Valid");
+        }
+        else
+        {
+            System.out.println(Email_Id+" Password Format Is Not Valid");
+        }
     }
 }
 
