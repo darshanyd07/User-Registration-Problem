@@ -12,15 +12,30 @@ public class Registration
         System.out.println("Enter your Last Name :");
         String Last_Name = d.readLine();
 
-        boolean Check_First_Name = First_Name.matches("[A-Z]{1}[a-z]{2,}");
-        boolean Check_Last_Name = Last_Name.matches("[A-Z]{1}[a-z]{2,}");
-        if(Check_First_Name == true && Check_Last_Name == true)
+        boolean Check_First_Name = First_Name.matches("^[A-Z]{1}[a-z]{2,}");
+        boolean Check_Last_Name = Last_Name.matches("^[A-Z]{1}[a-z]{2,}");
+
+
+        if(Check_First_Name == true && Check_Last_Name == true  )
         {
-            System.out.println(First_Name+" "+Last_Name+ "  Is Valid First Name And Last Name ");
+            System.out.println(First_Name+" "+Last_Name+ "  Is Valid First Name  Last Name Email ");
         }
         else
         {
-            System.out.println(First_Name+" "+Last_Name+"  Is Not Valid First Name");
+            System.out.println(First_Name+" "+Last_Name+"  Is  Valid First Name  Last Name Email");
+        }
+
+        System.out.println("Enter your  Email Id :");
+        String Email = d.readLine();
+        boolean Check_Email = Email.matches("^[A-Z a-z](.+){1}[A-Za-z]*+@{1}[bl](.+)[co](.+)[in]$");
+
+        if (Check_Email == true)
+        {
+            System.out.println(Email+"Email Id is Valid");
+        }
+        else
+        {
+            System.out.println(Email+"Email Is Not Valid");
         }
     }
 }
