@@ -3,9 +3,8 @@ import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class UserRegistrationTest
-{
-    public UserRegistration userRegistration = new UserRegistration();
+public class UserRegistrationTest {
+    UserRegistration userRegistration = new UserRegistration();
     @Test
     public void givenFirstName_whenProper_ShouldReturnTrue() {
         try {

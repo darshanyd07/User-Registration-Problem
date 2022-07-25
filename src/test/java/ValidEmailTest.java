@@ -9,29 +9,24 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class ValidEmailTest
-{
+public class ValidEmailTest {
     private String emailTest;
     private boolean expectedResult;
     private ValidEmail validEmail;
 
-    public ValidEmailTest(String email, boolean expectedResult)
-    {
+    public ValidEmailTest(String email, boolean expectedResult) {
         this.emailTest = email;
         this.expectedResult = expectedResult;
     }
 
     @Before
-    public void initialize()
-    {
+    public void initialize() {
         validEmail = new ValidEmail();
     }
 
     @Parameterized.Parameters
-    public static Collection data()
-    {
-        return Arrays.asList(new Object[][]
-                {
+    public static Collection data() {
+        return Arrays.asList(new Object[][]{
                 {"abc@yahoo.com", true},
                 {"abc-100@yahoo.com", true},
                 {"abc.100@yahoo.com", true},
@@ -58,8 +53,7 @@ public class ValidEmailTest
     }
 
     @Test
-    public void givenEmailAsVar_ShouldReturnTrueorFalse()
-    {
+    public void givenEmailAsVar_ShouldReturnTrueorFalse() {
         assertEquals(expectedResult, validEmail.validateEmail(emailTest));
     }
 }
