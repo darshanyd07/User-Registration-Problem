@@ -18,20 +18,18 @@ public class UserRegistrationTest
             return userRegistration.firstNameValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
-            // TODO Auto-generated catch block
-
+            System.out.println(e.getMessage());
         }
         return false;
     }).collect(Collectors.toList());
 
     Function<List<String>, List<Boolean>> lastNameTestCases = cases -> cases.stream().map(x ->
     {
-        try
-        {
+        try {
             return userRegistration.lastNameValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
-            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
 
         }
         return false;
@@ -39,25 +37,22 @@ public class UserRegistrationTest
 
     Function<List<String>, List<Boolean>> emailTestCases = cases -> cases.stream().map(x ->
     {
-        try
-        {
+        try {
             return userRegistration.emailValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
-            // TODO Auto-generated catch block
-
+            System.out.println(e.getMessage());
         }
         return false;
     }).collect(Collectors.toList());
 
     Function<List<String>, List<Boolean>> phoneTestCases = cases -> cases.stream().map(x ->
     {
-        try
-        {
+        try {
             return userRegistration.phoneNumberValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
-            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
 
         }
         return false;
@@ -65,12 +60,11 @@ public class UserRegistrationTest
 
     Function<List<String>, List<Boolean>> passwordTestCases = cases -> cases.stream().map(x ->
     {
-        try
-        {
+        try {
             return userRegistration.passwordValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
-            // TODO Auto-generated catch block
+            System.out.println(e.getMessage());
 
         }
         return false;
@@ -79,7 +73,7 @@ public class UserRegistrationTest
     @Test
     public void test_firstName_Cases()
     {
-        List<Boolean> result = firstNameTestCases.apply(Arrays.asList("Manali", "Nilofar", "Nikita", "Neha", "sdfs"));
+        List<Boolean> result = firstNameTestCases.apply(Arrays.asList("Yukta", "Nilofar", "Nikita", "Dars", "sdfs"));
         List<Boolean> expected = Arrays.asList(true, true, true, true, false);
         assertEquals(expected, result);
     }
@@ -87,7 +81,7 @@ public class UserRegistrationTest
     @Test
     public void test_lastName_Cases()
     {
-        List<Boolean> result = lastNameTestCases.apply(Arrays.asList("Patil", "Mujawar", "Chougule", "Chougule", "dvsd"));
+        List<Boolean> result = lastNameTestCases.apply(Arrays.asList("Patil", "Mujawar", "Chougule", "Mhat", "dvsd"));
         List<Boolean> expected = Arrays.asList(true, true, true, true, false);
         assertEquals(expected, result);
     }
@@ -111,7 +105,7 @@ public class UserRegistrationTest
     @Test
     public void test_password_Cases()
     {
-        List<Boolean> result = passwordTestCases.apply(Arrays.asList("Manali@2017", "Nilofar@2017", "Nikita@2017", "Neha@2017", "sdfs@2017"));
+        List<Boolean> result = passwordTestCases.apply(Arrays.asList("Yukta@2017", "Nilofar@2017", "Nikita@2017", "Darsh@2017", "sdfs@2017"));
         List<Boolean> expected = Arrays.asList(true, true, true, true, false);
         assertEquals(expected, result);
     }
