@@ -8,68 +8,76 @@ public class UserRegistration
     private static final String PHONE_NUMBER = "^(91)[\\s]{1}[1-9]{1}[0-9]{9}$";
     private static final String PASSWORD = "^(?=.*[A-Z])(?=.*[a-z])(?=[^!@#$%^&+=]*[!@#$%^&+=][^!@#$%^&+=]*$)(?=.*[0-9]).{8,}$";
 
-    public UserRegistrationInterface firstNameValidate = fName ->
+    public UserRegistrationInterface firstNameValidate = new UserRegistrationInterface()
     {
-        boolean result = Pattern.matches(NAME, fName);
-        if (result)
+        public boolean userEntries(String fName) throws InvalidUserInputException
         {
-            return result;
-        } else
-        {
-            throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_FIRST_NAME,
-                    "Invalid Firsrt Name");
+            boolean result = Pattern.matches(NAME, fName);
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_FIRST_NAME,
+                        "Invalid Firsrt Name");
+            }
         }
     };
 
-    public UserRegistrationInterface lastNameValidate = lName ->
+    public UserRegistrationInterface lastNameValidate = new UserRegistrationInterface()
     {
-        boolean result = Pattern.matches(NAME, lName);
-        if (result)
+        public boolean userEntries(String lName) throws InvalidUserInputException
         {
-            return result;
-        } else
-        {
-            throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_LAST_NAME,
-                    "Invalid Last Name");
+            boolean result = Pattern.matches(NAME, lName);
+            if (result)
+            {
+                return result;
+            } else
+            {
+                throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_LAST_NAME,
+                        "Invalid Last Name");
+            }
         }
     };
 
-    public UserRegistrationInterface emailValidate = email ->
+    public UserRegistrationInterface emailValidate = new UserRegistrationInterface()
     {
-        boolean result = Pattern.matches(EMAIL, email);
-        if (result)
+        public boolean userEntries(String email) throws InvalidUserInputException
         {
-            return result;
-        } else
-        {
-            throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+            boolean result = Pattern.matches(EMAIL, email);
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+            }
         }
     };
 
-    public UserRegistrationInterface phoneNumberValidate = phNum ->
+    public UserRegistrationInterface phoneNumberValidate = new UserRegistrationInterface()
     {
-        boolean result = Pattern.matches(PHONE_NUMBER, phNum);
-        if (result)
+        public boolean userEntries(String phNum) throws InvalidUserInputException
         {
-            return result;
-        }
-        else
-        {
-            throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_PHONE_NUMBER,
-                    "Invalid Phone Number");
+            boolean result = Pattern.matches(PHONE_NUMBER, phNum);
+            if (result)
+            {
+                return result;
+            } else
+            {
+                throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_PHONE_NUMBER,
+                        "Invalid Phone Number");
+            }
         }
     };
 
-    public UserRegistrationInterface passwordValidate = pw ->
+    public UserRegistrationInterface passwordValidate = new UserRegistrationInterface()
     {
-        boolean result = Pattern.matches(PASSWORD, pw);
-        if (result)
+        public boolean userEntries(String pw) throws InvalidUserInputException
         {
-            return result;
-        } else
-        {
-            throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_PASSWORD,
-                    "Invalid Password");
+            boolean result = Pattern.matches(PASSWORD, pw);
+            if (result) {
+                return result;
+            } else {
+                throw new InvalidUserInputException(InvalidUserInputException.ExceptionType.INVALID_PASSWORD,
+                        "Invalid Password");
+            }
         }
     };
 }
