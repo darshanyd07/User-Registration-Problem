@@ -16,6 +16,7 @@ public class UserRegistrationTest
         try
         {
             return userRegistration.firstNameValidate.userEntries(x);
+
         } catch (InvalidUserInputException e)
         {
             System.out.println(e.getMessage());
@@ -25,7 +26,8 @@ public class UserRegistrationTest
 
     Function<List<String>, List<Boolean>> lastNameTestCases = cases -> cases.stream().map(x ->
     {
-        try {
+        try
+        {
             return userRegistration.lastNameValidate.userEntries(x);
         } catch (InvalidUserInputException e)
         {
